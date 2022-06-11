@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-insurance-form-component',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsuranceFormComponentComponent implements OnInit {
 
-  constructor() { }
+  insuranceForm = new FormGroup({
+
+    insurancePrice: new FormControl(''),
+    numberOfInstallments: new FormControl(''),
+    state: new FormControl('')
+
+  });
+
 
   ngOnInit(): void {
   }

@@ -1,1 +1,33 @@
 <p>insurance-form-component works!</p>
+
+<form [formGroup]="insuranceForm">
+
+    <label for="insurance-price">Insurance amount:</label>
+    <input id="insurance-price" 
+        name="insurance-price" 
+        type="range" 
+        min="100" 
+        max="10000" 
+        step="750" 
+        value="3000" 
+        formControlName="insurancePrice"
+    >
+    <output name="insurance-price-result" for="insurance-price"></output>
+    
+    <p>{{'ADD VALUE FROM INSURANCE AMOUNT'}}</p>
+
+    <label for="number-of-installments">Number of installments:</label>
+    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
+    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
+    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
+    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
+
+    <label for="state">State:</label>
+    <input id="state" type="button" formControlName="state">
+    <input id="state" type="button" formControlName="state">
+    <p>ADD text about new client</p>
+
+    <button>Calculate installment</button>
+    <p>Result: in zloty</p>
+
+</form>
