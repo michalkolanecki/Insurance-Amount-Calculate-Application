@@ -3,10 +3,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-insurance-form-component',
-  templateUrl: './insurance-form-component.component.html',
-  styleUrls: ['./insurance-form-component.component.css']
+  templateUrl: './insurance-form.component.html',
+  styleUrls: ['./insurance-form.component.css']
 })
-export class InsuranceFormComponentComponent implements OnInit {
+export class InsuranceFormComponent implements OnInit {
 
   insuranceForm = new FormGroup({
 

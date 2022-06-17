@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InsuranceFormComponentComponent } from './insurance-form-component/insurance-form-component.component';
+import { InsuranceFormComponent } from './insurance-form/insurance-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InsuranceFormComponentComponent
+    InsuranceFormComponent
   ],
   imports: [
     BrowserModule,
