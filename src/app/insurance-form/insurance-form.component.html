@@ -1,35 +1,38 @@
-<p>insurance-form-component works!</p>
+<h1>Insurance calculator</h1>
 
-<form [formGroup]="insuranceForm">
-
-    <label for="insurance-price">Insurance amount:</label>
-    <input id="insurance-price" 
-        name="insurance-price" 
-        type="range" 
-        min="100" 
-        max="10000" 
-        step="750" 
-        value="3000" 
-        formControlName="insurancePrice"
-    >
-    <output name="insurance-price-result" for="insurance-price"></output>
+<form class="insurance-form" [formGroup]="insuranceForm">
+    <div>
+        <p>Insurance amount</p>
+        <label for="insurance-price">{{ rangeAmount.min }} - {{ rangeAmount.value }} - {{ rangeAmount.max }}</label>
+        <input id="insurance-price" 
+            name="insurance-price" 
+            type="range" 
+            value="5000"
+            min="100" 
+            max="10000" 
+            step="1"
+            formControlName="insurancePrice"
+            #rangeAmount
+        />
+    </div>
     
-    <p>{{'ADD VALUE FROM INSURANCE AMOUNT'}}</p>
+    <div formGroupName="installment">
+        <label for="installment">Amount of installments</label>
+        <input class="insurance-installment-button" name="installment" type="button" value="1 installment" formControlName="oneInstallment"/>
+        <input class="insurance-installment-button" name="installment" type="button" value="2 installments" formControlName="twoInstallments"/>
+        <input class="insurance-installment-button" name="installment" type="button" value="4 installments" formControlName="fourInstallments"/>
+    </div>
 
-    <label for="number-of-installments">Number of installments:</label>
-    
-    ADD *ngFor directive for button - to iterate
-    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
-    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
-    <input id="number-of-installments" type="button" formControlName="numberOfInstallments">
-    
+    <div formGroupName="state">
+        <label for="state">State</label>
+        <input class="insurance-state-button" name="state" type="button" value="no damage" formControlName="noDamage"/>
+        <input class="insurance-state-button" name="state" type="button" value="the damage done" formControlName="doneDamage"/>
+        <p>No choice means a new customer with no past</p>
+    </div>
 
-    <label for="state">State:</label>
-    <input id="state" type="button" formControlName="state">
-    <input id="state" type="button" formControlName="state">
-    <p>ADD text about new client</p>
-
-    <button>Calculate installment</button>
-    <p>Result: in zloty</p>
+    <div>
+        <button type="button" class="calculate-button" (click)="calculateResult()">Calculate installment</button>
+        <p>{{ result }} zł</p>
+    </div>
 
 </form>
